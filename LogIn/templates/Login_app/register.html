@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+{% extends "Login_app/base.html" %} 
+{% load static %} 
+{% block body_block %}
+<br>
+{% if register %}
+<div class="alert alert-success">
+    Registered Success Full
+</div>
+{% else %}
+<form action="" method="POST" enctype="multipart/form-data">
+    {{ user_form.as_p }}
+    {{user_info_form.as_p }}
+    {% csrf_token %}
+    <input type="submit" value="Register" name="submit">
+</form>
+{% endif %}
+{% endblock %}

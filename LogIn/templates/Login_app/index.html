@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+{% extends "Login_app/base.html" %}
+{% block body_block %}
+<br>
+{% if user.is_authenticated %}
+{{ user_basic_info.username }}<br>
+{{ user_basic_info.email }}<br>
+{{ user_more_info.profile_pic }}<br>
+<p><a href="{{ user_more_info.facebook_id }}">Facebook Id</a></p> <br>
+<img src="/media/{{ user_more_info.profile_pic }}" width="200px">
+{% else %}
+<p class="text-success">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem quasi fuga amet facere doloremque.</p>
+{% endif %}
+{% endblock %}
